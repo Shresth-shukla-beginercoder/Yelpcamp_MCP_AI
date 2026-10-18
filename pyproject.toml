@@ -1,0 +1,17 @@
+[project]
+name = "YelpCamp_AI_MCP"
+version = "0.1.0"
+description = "AI chatbot for YelpCamp using FastAPI, Gemini, and MCP."
+authors = [{name = "Shresth", email = "noreply@anthropic.com"}]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "google-generativeai",
+    "mcp",
+    "httpx",
+    "pydantic-settings",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
