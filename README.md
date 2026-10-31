@@ -1,44 +1,9 @@
 # YelpCamp AI MCP
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/shresthshukla/yelpcamp-mcp-ai)](https://hub.docker.com/r/shresthshukla/yelpcamp-mcp-ai)
+[![Render Deployment](https://img.shields.io/badge/Deployed%20on-Render-blue)](https://yelpcamp-mcp-ai.onrender.com)
+
 ## System Architecture
-
-The YelpCamp AI MCP system follows a modern microservices architecture with the following key components:
-
-1. **Frontend Interface**: Web-based UI for user interaction
-2. **FastAPI Backend**: Core application logic and API endpoints
-3. **Gemini AI Service**: Natural language processing and recommendation engine
-4. **Database**: Stores campground information and user data
-5. **Docker Container**: Encapsulates the application for consistent deployment
-6. **Render Cloud**: Hosting platform for the deployed application
-
-### Example Interaction Flow
-
-1. User types "Find me a campground near Yellowstone with lake access" in the chat interface
-2. Frontend sends request to FastAPI backend
-3. Backend processes request and sends to Gemini AI service
-4. Gemini AI analyzes query and generates recommendations
-5. Backend formats recommendations and sends back to frontend
-6. Frontend displays results to user with map view and details
-
-### Technical Stack
-
-- **Backend**: Python 3.9+ with FastAPI framework
-- **AI Processing**: Gemini API for natural language understanding
-- **Database**: PostgreSQL for relational data storage
-- **Containerization**: Docker for consistent deployment
-- **Hosting**: Render cloud platform
-
-### Deployment Architecture
-
-```mermaid
-flowchart TD
-    A[GitHub Repository] -->|Source Code| B[Docker Build]
-    B -->|Container Image| C[Render Cloud]
-    C -->|Hosted Application| D[Users]
-    E[CI/CD Pipeline] -->|Automated Deployments| C
-```
-
-For a more detailed view of the architecture, see the [flowchart.md](flowchart.md) file.
 
 ```mermaid
 flowchart TD
@@ -59,32 +24,29 @@ flowchart TD
     H -->|CI/CD Pipeline| G
 ```
 
-For a more detailed view of the architecture, see the [flowchart.md](flowchart.md) file.
+## Architecture Components
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/shresthshukla/yelpcamp-mcp-ai)](https://hub.docker.com/r/shresthshukla/yelpcamp-mcp-ai)
-[![Render Deployment](https://img.shields.io/badge/Deployed%20on-Render-blue)](https://yelpcamp-mcp-ai.onrender.com)
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.95.2-green)](https://fastapi.tiangolo.com/)
-[![Gemini](https://img.shields.io/badge/Gemini-AI-orange)](https://gemini.google.com/)
+1. **User Interface**: Web or mobile interface where users interact with the system
+2. **FastAPI Backend**: Handles API requests and business logic
+3. **Gemini AI Service**: Provides natural language processing and recommendations
+4. **Database**: Stores campground information and user data
+5. **Docker Container**: Encapsulates the application for consistent deployment
+6. **Render Cloud**: Hosting platform for the deployed application
+7. **GitHub Repository**: Source code management and CI/CD pipeline
 
-## Overview
+## Data Flow
 
-YelpCamp AI MCP is an advanced AI-powered chatbot for YelpCamp, providing intelligent recommendations and assistance for campgrounds. This application leverages FastAPI for the backend, Gemini AI for natural language processing, and is containerized with Docker for easy deployment.
+1. User submits a query through the frontend interface
+2. Frontend sends API request to FastAPI backend
+3. Backend processes request and sends to Gemini AI service
+4. Gemini AI generates recommendations based on the query
+5. Backend receives response and formats for display
+6. Frontend displays recommendations to the user
 
-![Architecture Diagram](screenshots/architecture_diagram.png)
+7. Backend interacts with database for campground information
 
-## Features
-
-- Intelligent campground recommendations
-- Natural language processing for user queries
-- FastAPI backend for robust API endpoints
-- Docker containerization for easy deployment
-- Render cloud deployment
-
-## Screenshots
-
-![Chat Interface](screenshots/chat_interface.png)
-![Recommendation Example](screenshots/recommendation_example.png)
+8. Source code is managed in GitHub repository
+9. Docker container is built and deployed to Render cloud
 
 ## Getting Started
 
@@ -149,22 +111,3 @@ Run all tests:
 ```bash
 uv run python -m pytest
 ```
-
-## Contributing
-
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions or feedback, please contact [your.email@example.com](mailto:your.email@example.com).
-
-## Acknowledgements
-
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [Gemini AI](https://gemini.google.com/)
-- [Docker](https://www.docker.com/)
-- [Render](https://render.com/)
