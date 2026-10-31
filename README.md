@@ -2,6 +2,44 @@
 
 ## System Architecture
 
+The YelpCamp AI MCP system follows a modern microservices architecture with the following key components:
+
+1. **Frontend Interface**: Web-based UI for user interaction
+2. **FastAPI Backend**: Core application logic and API endpoints
+3. **Gemini AI Service**: Natural language processing and recommendation engine
+4. **Database**: Stores campground information and user data
+5. **Docker Container**: Encapsulates the application for consistent deployment
+6. **Render Cloud**: Hosting platform for the deployed application
+
+### Example Interaction Flow
+
+1. User types "Find me a campground near Yellowstone with lake access" in the chat interface
+2. Frontend sends request to FastAPI backend
+3. Backend processes request and sends to Gemini AI service
+4. Gemini AI analyzes query and generates recommendations
+5. Backend formats recommendations and sends back to frontend
+6. Frontend displays results to user with map view and details
+
+### Technical Stack
+
+- **Backend**: Python 3.9+ with FastAPI framework
+- **AI Processing**: Gemini API for natural language understanding
+- **Database**: PostgreSQL for relational data storage
+- **Containerization**: Docker for consistent deployment
+- **Hosting**: Render cloud platform
+
+### Deployment Architecture
+
+```mermaid
+flowchart TD
+    A[GitHub Repository] -->|Source Code| B[Docker Build]
+    B -->|Container Image| C[Render Cloud]
+    C -->|Hosted Application| D[Users]
+    E[CI/CD Pipeline] -->|Automated Deployments| C
+```
+
+For a more detailed view of the architecture, see the [flowchart.md](flowchart.md) file.
+
 ```mermaid
 flowchart TD
     A[User] -->|Queries| B[Frontend Interface]
@@ -33,7 +71,7 @@ For a more detailed view of the architecture, see the [flowchart.md](flowchart.m
 
 YelpCamp AI MCP is an advanced AI-powered chatbot for YelpCamp, providing intelligent recommendations and assistance for campgrounds. This application leverages FastAPI for the backend, Gemini AI for natural language processing, and is containerized with Docker for easy deployment.
 
-![Architecture Diagram](https://via.placeholder.com/800x400?text=YelpCamp+AI+MCP+Architecture)
+![Architecture Diagram](screenshots/architecture_diagram.png)
 
 ## Features
 
@@ -45,8 +83,8 @@ YelpCamp AI MCP is an advanced AI-powered chatbot for YelpCamp, providing intell
 
 ## Screenshots
 
-![Chat Interface](https://via.placeholder.com/800x400?text=Chat+Interface)
-![Recommendation Example](https://via.placeholder.com/800x400?text=Recommendation+Example)
+![Chat Interface](screenshots/chat_interface.png)
+![Recommendation Example](screenshots/recommendation_example.png)
 
 ## Getting Started
 
