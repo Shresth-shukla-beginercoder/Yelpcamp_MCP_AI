@@ -37,6 +37,20 @@ def startup_event():
     chat_service = GeminiChatService()
 
 
+@app.get("/")
+def root():
+    return {
+        "status": "online",
+        "service": "YelpCamp AI Assistant",
+        "version": "1.0.0",
+        "endpoints": {
+            "health": "/health",
+            "chat": "/chat (POST)",
+            "docs": "/docs"
+        }
+    }
+
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
